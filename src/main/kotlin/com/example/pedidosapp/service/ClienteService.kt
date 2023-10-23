@@ -44,7 +44,7 @@ class ClienteService {
             val response = clienteRepository.findById(cliente.id)
                     ?: throw Exception("ID no existe")
             response.apply {
-                nombre=cliente.nombre
+                telefono=cliente.telefono
             }
             return clienteRepository.save(response)
         }
