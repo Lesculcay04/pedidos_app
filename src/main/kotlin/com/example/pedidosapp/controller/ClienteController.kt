@@ -45,4 +45,10 @@ class ClienteController {
     fun delete (@PathVariable("id") id: Long):Boolean? {
         return clienteService.delete(id)
     }
+
+    @GetMapping("/{id}")
+    fun listById (@PathVariable("id") id: Long): ResponseEntity<*>{
+        return ResponseEntity(clienteService.listById (id), HttpStatus.OK)
+
+    }
 }

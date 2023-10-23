@@ -64,6 +64,8 @@ class ClienteService {
             throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
         }
     }
-
+    fun listById (id:Long?):Cliente?{
+        return clienteRepository.findById(id)
+    }
 
 }
